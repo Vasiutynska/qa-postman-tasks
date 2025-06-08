@@ -1,0 +1,270 @@
+{
+	"id": "4a3bd599-c18a-469e-86b0-6cfce5e3efc6",
+	"name": "Homework",
+	"timestamp": "2024-11-12T14:51:30.625Z",
+	"collection_id": "28294004-67f7a7c4-afc1-45e0-bb80-49904482b35c",
+	"folder_id": "28294004-facc4241-d1ba-4561-aff3-a862c9f3d2b1",
+	"environment_id": "28294004-306e1eeb-7d55-4100-8c42-776d7731fe01",
+	"totalPass": 8,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-11-12T14:51:29.472Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ad7e687b-3919-4edb-9bc3-e8216c54ce36",
+			"name": "Empty name",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 40,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "3a33084d-97e8-4a2c-9fb4-4379598d795e",
+			"name": "Name with numbers",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 40,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "60febfef-2831-4811-b607-672c6df02ad9",
+			"name": "Empty last name",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 41,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				41
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "a9cd307a-bb01-436d-9ef2-d8b3b3931aa9",
+			"name": "Last name with numbers",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 42,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				42
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "e986bdd9-f134-4604-b6c7-853fe319e28a",
+			"name": "Empty email",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 39,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				39
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "b2076610-823a-41aa-bfd8-425a988b7cca",
+			"name": "Invalid email",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 39,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				39
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "7bae1ea5-bfd6-4b24-bcbc-22dbc9c7a129",
+			"name": "Empty password",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 44,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				44
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		},
+		{
+			"id": "4dac304d-7305-49a1-a696-35ddde324b4b",
+			"name": "Empty repeat password",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 40,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check error message": true
+			},
+			"testPassFailCounts": {
+				"Check error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"Check error message": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 325,
+	"collection": {
+		"requests": [
+			{
+				"id": "ad7e687b-3919-4edb-9bc3-e8216c54ce36",
+				"method": "POST"
+			},
+			{
+				"id": "3a33084d-97e8-4a2c-9fb4-4379598d795e",
+				"method": "POST"
+			},
+			{
+				"id": "60febfef-2831-4811-b607-672c6df02ad9",
+				"method": "POST"
+			},
+			{
+				"id": "a9cd307a-bb01-436d-9ef2-d8b3b3931aa9",
+				"method": "POST"
+			},
+			{
+				"id": "e986bdd9-f134-4604-b6c7-853fe319e28a",
+				"method": "POST"
+			},
+			{
+				"id": "b2076610-823a-41aa-bfd8-425a988b7cca",
+				"method": "POST"
+			},
+			{
+				"id": "7bae1ea5-bfd6-4b24-bcbc-22dbc9c7a129",
+				"method": "POST"
+			},
+			{
+				"id": "4dac304d-7305-49a1-a696-35ddde324b4b",
+				"method": "POST"
+			}
+		]
+	}
+}

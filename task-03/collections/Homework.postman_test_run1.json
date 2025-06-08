@@ -1,0 +1,59 @@
+{
+	"id": "e429e568-549e-4547-afc1-fac2f29faadb",
+	"name": "Homework",
+	"timestamp": "2024-11-12T14:49:46.603Z",
+	"collection_id": "28294004-67f7a7c4-afc1-45e0-bb80-49904482b35c",
+	"folder_id": "28294004-6e119b28-26e0-45d6-b613-cd805322efea",
+	"environment_id": "28294004-306e1eeb-7d55-4100-8c42-776d7731fe01",
+	"totalPass": 2,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-11-12T14:49:46.193Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "0b6a21fe-4948-48db-8acd-d87f022fb77a",
+			"name": "New user registration",
+			"url": "https://qauto.forstudy.space/api/auth/signup",
+			"time": 43,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Generate JSON schema": true,
+				"Response matches JSON schema": true
+			},
+			"testPassFailCounts": {
+				"Generate JSON schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response matches JSON schema": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				43
+			],
+			"allTests": [
+				{
+					"Generate JSON schema": true,
+					"Response matches JSON schema": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 43,
+	"collection": {
+		"requests": [
+			{
+				"id": "0b6a21fe-4948-48db-8acd-d87f022fb77a",
+				"method": "POST"
+			}
+		]
+	}
+}
