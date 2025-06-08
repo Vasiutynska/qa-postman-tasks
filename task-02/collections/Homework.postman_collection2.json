@@ -1,0 +1,819 @@
+{
+	"info": {
+		"_postman_id": "67f7a7c4-afc1-45e0-bb80-49904482b35c",
+		"name": "Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28294004",
+		"_collection_link": "https://blue-spaceship-578194.postman.co/workspace/QA_Postman~30287cce-6648-4d3f-ab03-7d551a2463eb/collection/28294004-67f7a7c4-afc1-45e0-bb80-49904482b35c?action=share&creator=28294004&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Validation",
+			"item": [
+				{
+					"name": "Empty name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql('\"name\" is not allowed to be empty');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"lastName\": \"Dou\",\n    \"email\": \"test@test.com\",\n    \"password\": \"Qwerty12345\",\n    \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Name with numbers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql(\"Name is invalid\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John123\",\n    \"lastName\": \"Dou\",\n    \"email\": \"test@test.com\",\n    \"password\": \"Qwerty12345\",\n    \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty last name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql('\"lastName\" is not allowed to be empty');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John\",\n    \"lastName\": \"\",\n    \"email\": \"test@test.com\",\n    \"password\": \"Qwerty12345\",\n    \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Last name with numbers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql(\"Last Name is invalid\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John\",\n  \"lastName\": \"Dou123\",\n  \"email\": \"test@test.com\",\n  \"password\": \"Qwerty12345\",\n  \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql('\"email\" is not allowed to be empty');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John\",\n  \"lastName\": \"Dou\",\n  \"email\": \"\",\n  \"password\": \"Qwerty12345\",\n  \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql(\"Email is incorrect\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John\",\n    \"lastName\": \"Dou\",\n    \"email\": \"testtest\",\n    \"password\": \"Qwerty12345\",\n    \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql('\"password\" is not allowed to be empty');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John\",\n    \"lastName\": \"Dou\",\n    \"email\": \"test@test.com\",\n    \"password\": \"\",\n    \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty repeat password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check error message\", function () {",
+									"    pm.response.to.have.jsonBody();",
+									"    pm.expect(pm.response.json()).to.have.property('message');",
+									"    pm.expect(pm.response.json().message).to.eql('\"repeatPassword\" is not allowed to be empty');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John\",\n    \"lastName\": \"Dou\",\n    \"email\": \"test@test.com\",\n    \"password\": \"Qwerty12345\",\n    \"repeatPassword\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "New user registration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Generate JSON schema\", function () {",
+									"    const schema = pm.response.json();",
+									"    pm.environment.set(\"userSchema\", JSON.stringify(schema, null, 2));",
+									"});",
+									"",
+									"const Ajv = require('ajv');",
+									"const schema = JSON.parse(pm.environment.get(\"userSchema\"));",
+									"",
+									"const ajv = new Ajv();",
+									"const validate = ajv.compile(schema);",
+									"const valid = validate(pm.response.json());",
+									"",
+									"pm.test(\"Response matches JSON schema\", function () {",
+									"    pm.expect(valid).to.be.true;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Monica\",\n    \"lastName\": \"Doug\",\n    \"email\": \"monica1@test.com\",\n    \"password\": \"Qwerty12345\",\n    \"repeatPassword\": \"Qwerty12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Edit info",
+			"item": [
+				{
+					"name": "Edit user's info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check dateBirth format\", function () {",
+									"    const dateOfBirth = pm.response.json().data.dateBirth;",
+									"    const formattedDate = new Date(dateOfBirth).toISOString().split('T')[0];",
+									"    pm.expect(formattedDate).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Check profile update response\", function () {",
+									"    const responseData = pm.response.json().data;",
+									"",
+									"    pm.expect(responseData.photoFilename).to.eql(\"default-user.png\");",
+									"    pm.expect(responseData.name).to.eql(\"John\");",
+									"    pm.expect(responseData.lastName).to.eql(\"Douson\");",
+									"    pm.expect(responseData.dateBirth).to.eql(\"2000-03-17T00:00:00.000Z\");",
+									"    pm.expect(responseData.country).to.eql(\"Ukraine\");",
+									"});",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"photo\": \"user-1621352948859.jpg\",\n  \"name\": \"John\",\n  \"lastName\": \"Douson\",\n  \"dateBirth\": \"2000-03-17\",\n  \"country\": \"Ukraine\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Password change",
+			"item": [
+				{
+					"name": "Password change",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check password update response\", function () {",
+									"    const createdUserId = pm.environment.get(\"createdUserId\");",
+									"    const responseData = pm.response.json().data;",
+									"    const updatedUserId = responseData.userId;",
+									"    pm.expect(updatedUserId.toString()).to.eql(createdUserId);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"oldPassword\": \"{{userPassword}}\",\n  \"password\": \"Qwerty123456\",\n  \"repeatPassword\": \"Qwerty123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logout/login",
+			"item": [
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check logout status code\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check login response for expected keys\", function () {",
+									"    const expectedKeys = [\"userId\", \"photoFilename\", \"distanceUnits\", \"currency\"];",
+									"    pm.expect(pm.response.json().data).to.have.keys(expectedKeys);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"monica1@test.com\",\n    \"password\": \"Qwerty123456\",\n    \"remember\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Add a new car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check car addition response for correct data\", function () {",
+									"    const responseData = pm.response.json().data;",
+									"",
+									"    pm.expect(responseData).to.have.property('carBrandId', 1);",
+									"    pm.expect(responseData).to.have.property('carModelId', 1);",
+									"    pm.expect(responseData).to.have.property('mileage', 122);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"carBrandId\": 1,\n    \"carModelId\": 1,\n    \"mileage\": 122\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check the car",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cars",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expenses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check expenses addition\", function () {",
+									"    const requestData = pm.request.body;",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData.data).to.have.property('carId', requestData.carId);",
+									"    pm.expect(responseData.data).to.have.property('reportedAt', requestData.reportedAt);",
+									"    pm.expect(responseData.data).to.have.property('liters', requestData.liters);",
+									"    pm.expect(responseData.data).to.have.property('totalCost', requestData.totalCost);",
+									"",
+									"    const previousMileage = pm.variables.get(\"previousMileage\");",
+									"    if (previousMileage !== null && previousMileage !== undefined) {",
+									"        pm.expect(responseData.data.mileage).to.be.gt(previousMileage);",
+									"    }",
+									"",
+									"    pm.variables.set(\"previousMileage\", responseData.data.mileage);",
+									"});",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"carId\": 125300,\n  \"reportedAt\": \"2024-04-20\",\n  \"mileage\": 137,\n  \"liters\": 11,\n  \"totalCost\": 1348,\n  \"forceMileage\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/expenses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete user",
+			"item": [
+				{
+					"name": "Delete user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check deletion status code\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "test_collection_var",
+			"value": "test",
+			"type": "string"
+		}
+	]
+}
